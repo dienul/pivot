@@ -8,6 +8,15 @@
 ## How to install application
 - Run ```npm install --save```
 - Pastikan ```node modules``` sudah tersedia setelah run ```npm install```
+    ```
+    |server
+    |--controller
+    |--helper
+    |--middlewares
+    |--node_modules
+    |--etc
+    |README.md
+    ```
 - Ubah connection database in config ```knexfile.js```
     ```javascript
     module.exports = {
