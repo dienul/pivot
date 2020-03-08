@@ -43,13 +43,58 @@ exports.seed = function(knex) {
         },
         {
           id: 5,
-          firstname: 'Robert',
-          lastname: 'Garcia',
-          email:'Robert@gmail.com',
+          firstname: 'Leola',
+          lastname: 'Kub',
+          email:'LeolaKub@gmail.com',
           item:'Item5',
+          quantity:2,
+          total_price:100000
+        },
+        {
+          id: 6,
+          firstname: 'Sterling',
+          lastname: 'Rosenbaum',
+          email:'SterlingRosenbaum@gmail.com',
+          item:'Item6',
+          quantity:1,
+          total_price:150000
+        },
+        {
+          id: 7,
+          firstname: 'Susan',
+          lastname: 'Wilkinson',
+          email:'SusanWilkinson@gmail.com',
+          item:'Item7',
           quantity:3,
           total_price:150000
         },
+        {
+          id: 8,
+          firstname: 'Robert',
+          lastname: 'Garcia',
+          email:'Robert@gmail.com',
+          item:'Item8',
+          quantity:3,
+          total_price:300000
+        },
+        {
+          id: 9,
+          firstname: 'Lenora',
+          lastname: 'McKenzie',
+          email:'LenoraMcKenzie@gmail.com',
+          item:'Item9',
+          quantity:2,
+          total_price:200000
+        },
+        {
+          id: 10,
+          firstname: 'Guiseppe',
+          lastname: 'Zulauf',
+          email:'GuiseppeZulauf@gmail.com',
+          item:'Item10',
+          quantity:4,
+          total_price:200000
+        }
       ]);
     });
 };
