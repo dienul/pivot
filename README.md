@@ -3,7 +3,7 @@
 ## Application required
 - NodeJs V10.x or above
 - NPM V6.x or above
-- MySQL 5.7
+- MySQL V5.x
 
 ## How to install application
 - Run ```npm install --save```
