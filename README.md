@@ -43,7 +43,7 @@ Port : 3000
 - Feed of User Facebook
     - url : http://localhost:3000/facebook?page=1&limit=5
     - Method : GET
-    - REQUEST Data Input / req.query : { page : 1, limit : 5 }
+    - REQUEST Data Input / req.query : ```{ page : 1, limit : 5 }```
     
  
 
