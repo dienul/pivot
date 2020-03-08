@@ -13,12 +13,12 @@
 
 ## Migration Database
 ```
-run knex migrate:latest
+knex migrate:latest
 ```
 
 ## Seeder Database 
 ```
-run knex seed:run
+knex seed:run
 ```
 
 ## How to run 
