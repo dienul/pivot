@@ -1,10 +1,10 @@
 
 exports.seed = function(knex) {
   // Deletes ALL existing entries
-  return knex('vipot').del()
+  return knex('Transaction').del()
     .then(function () {
       // Inserts seed entries
-      return knex('vipot').insert([
+      return knex('Transaction').insert([
         {
           id: 1,
           firstname: 'Tommy',

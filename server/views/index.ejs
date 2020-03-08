@@ -32,7 +32,16 @@
                 </tr>
                 </thead>
                 <tbody>
-                
+                    <% for(var i = 0; i < data.length; i++) { %>
+                        <tr>
+                            <td><%= data[i].id %></td>
+                            <td><%= data[i].firstname + " " + data[i].lastname %></td>
+                            <td><%= data[i].email %></td>
+                            <td><%= data[i].item %></td>
+                            <td><%= data[i].quantity %></td>
+                            <td><%= data[i].total_price %></td>
+                        </tr>
+                    <% } %>
                 </tbody>
                 <tfoot>
                 <tr>
@@ -118,14 +127,14 @@
             e.preventDefault();
             $.ajax({
                 type: "POST",
-                url: "http://localhost:8080",
+                url: "/insert-data",
                 data: {
-                    post_first_name: $("input[name=form_first_name]").val(),
-                    post_last_name: $("input[name=form_last_name]").val(),
-                    post_email: $("input[name=form_email]").val(),
-                    post_item: $("select[name=form_item]").val(),
-                    post_quantity: $("input[name=form_quantity]").val(),
-                    post_total: $("input[name=form_total]").val()
+                    firstname: $("input[name=form_first_name]").val(),
+                    lastname: $("input[name=form_last_name]").val(),
+                    email: $("input[name=form_email]").val(),
+                    item: $("select[name=form_item]").val(),
+                    quantity: $("input[name=form_quantity]").val(),
+                    total_price: $("input[name=form_total]").val()
                 },
                 success: function (data) {
                     swal("Success", "Transaksi Berhasil Ditambahan", "success").then((val)=> {
@@ -133,12 +142,13 @@
 
                     });
                     },
-                error: function (data) {
-                    var errs = '';
-                    $.each(data.responseJSON.errorMessage, function (key, val) {
-                        errs += val + '\n'
-                    })
-                    swal("Error", errs, "error");
+                error: function (error) {
+                    // console.log(error)
+                    // var errs = '';
+                    // $.each(data.responseJSON.massage, function (key, val) {
+                    //     errs += val + '\n'
+                    // })
+                    swal("Error", "error", "error");
                 }
             })
         })
@@ -153,6 +163,7 @@
             type: 'GET',
             url: '/pivot',
             success: function (data) {
+                console.log(data)
                 var createTdHead = '';
                 var createTdFoot = '';
                 var createTdBody = '';
@@ -168,10 +179,10 @@
 
                 for (var i = 0; i < data.data.result.length; i++) {
                     createTdBody += '<tr>'
-                    createTdBody += '<td>' + data.data.result[i].res_email + '</td>'
-                    createTdBody += '<td>' + data.data.result[i].res_full_name + '</td>'
-                    for (var k = 0; k < data.data.result[i].data.length; k++) {
-                        createTdBody += '<td>' + data.data.result[i].data[k] + '</td>'
+                    createTdBody += '<td>' + data.data.result[i].fullname + '</td>'
+                    createTdBody += '<td>' + data.data.result[i].email + '</td>'
+                    for (var k = 0; k < data.data.result[i].items.length; k++) {
+                        createTdBody += '<td>' + data.data.result[i].items[k].value + '</td>'
                     }
                     createTdBody += '</tr>'
                 }
@@ -184,6 +195,7 @@
                     '</table>')
 
             }, error: function (data) {
+                console.log(data)
                 swal("Error", data, "error");
             }
         })
@@ -201,16 +213,18 @@
     function ganerateForm() {
         $.ajax({
             type: 'GET',
-            url: '/generateME',
+            url: '/generate',
             success: function (data) {
-                $("input[name=form_first_name]").val(data.data.res_first_name);
-                $("input[name=form_last_name]").val(data.data.res_last_name);
-                $("input[name=form_email]").val(data.data.res_email);
-                $("select[name=form_item]").val(data.data.res_item);
-                $("input[name=form_quantity]").val(data.data.res_quantity);
-                $("input[name=form_total]").val(data.data.res_total_price);
+                console.log(data)
+                $("input[name=form_first_name]").val(data.data.firstname);
+                $("input[name=form_last_name]").val(data.data.lastname);
+                $("input[name=form_email]").val(data.data.email);
+                $("select[name=form_item]").val(data.data.item);
+                $("input[name=form_quantity]").val(data.data.quantity);
+                $("input[name=form_total]").val(data.data.total_price);
             }, error: function (data) {
-                swal("Error", data, "error");
+                console.log(data)
+                swal("Error", data , "error");
             }
         })
     }
