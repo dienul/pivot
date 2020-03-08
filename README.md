@@ -9,7 +9,29 @@
 - Run ```npm install --save```
 - Pastikan ```node modules``` sudah tersedia setelah run ```npm install```
 - Ubah connection database in config ```knexfile.js```
+    ```javascript
+    module.exports = {
+    development: {
+    client: 'mysql',
+    connection: {
+      host : 'localhost',
+      user : 'your_username',
+      password : 'your_password',
+      database : 'your_database',
+    },
+    migrations: {
+      directory: __dirname + '/knex/migrations',
+        },
+    seeds: {
+      directory: __dirname + '/knex/seeds'
+        }
+    }
+    ```
 - Ubah ```access_token``` facebook in ```controller_facebook.js``` di sebabkan oleh expired dari facebook 
+    ```javascript
+    let access_token = 'your_access_token'
+
+    ```
 
 ## Migration Database
 ```
