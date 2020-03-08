@@ -9,6 +9,7 @@ How to install application
 - Run npm install --save
 - Pastikan node modules sudah tersedia setelah run npm install
 - Ubah connection database in config knexfile.js
+- Ubah access_token facebook in controller_facebook.js di sebabkan oleh expired dari facebook 
 
 Migration Database
 - run knex migrate:latest
