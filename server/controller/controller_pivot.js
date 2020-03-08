@@ -2,7 +2,7 @@ const faker = require('faker')
 const path = require("path")
 // const goblok = require('../../client/index.ejs')
 const db_pivot = require('../model/pivot')
-const bd_item = ["Item1", "Item2", "Item3", " Item4", "Item5", "Item6", "Item7", "Item8", "Item9", "Item10"]
+const bd_item = ["Item1", "Item2", "Item3", "Item4", "Item5", "Item6", "Item7", "Item8", "Item9", "Item10"]
 
 class pivot {
   static async generate(req, res){

@@ -10,7 +10,7 @@ exports.seed = function(knex) {
           firstname: 'Tommy',
           lastname: 'Bejo',
           email:'tommybejo@gmail.com',
-          item:'Barang1',
+          item:'Item1',
           quantity:2,
           total_price:100000
         },
@@ -19,7 +19,7 @@ exports.seed = function(knex) {
           firstname: 'Joko',
           lastname: 'Widodo',
           email:'Joko@gmail.com',
-          item:'Barang2',
+          item:'Item2',
           quantity:1,
           total_price:50000
         },
@@ -28,7 +28,7 @@ exports.seed = function(knex) {
           firstname: 'Jusuf',
           lastname: 'Kalla',
           email:'Jusuf@gmail.com',
-          item:'Barang3',
+          item:'Item3',
           quantity:3,
           total_price:150000
         },
@@ -37,7 +37,7 @@ exports.seed = function(knex) {
           firstname: 'Tommy',
           lastname: 'Bejo',
           email:'tommybejo@gmail.com',
-          item:'Barang2',
+          item:'Item4',
           quantity:2,
           total_price:100000
         },
@@ -46,7 +46,7 @@ exports.seed = function(knex) {
           firstname: 'Robert',
           lastname: 'Garcia',
           email:'Robert@gmail.com',
-          item:'Barang10',
+          item:'Item5',
           quantity:3,
           total_price:150000
         },
